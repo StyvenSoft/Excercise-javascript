@@ -33,3 +33,9 @@ Método filter(), Método reduce (), asignación de desestructuración, Objetos 
 - addOneToOne = ()
 - Ciclo For
 - Ciclo While
+
+## 5 Template Literals string
+
+- makeList(arr)
+- Objeto abreviado
+- Funcion declarativa
