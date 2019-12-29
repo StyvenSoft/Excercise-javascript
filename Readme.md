@@ -39,3 +39,12 @@ Método filter(), Método reduce (), asignación de desestructuración, Objetos 
 - makeList(arr)
 - Objeto abreviado
 - Funcion declarativa
+
+## 6 Sintaxis básica de clase
+
+- SpaceShuttle (targetPlanet)
+- getters and setters
+- class Thermostat
+
+
+Learn more https://javascript.info/
