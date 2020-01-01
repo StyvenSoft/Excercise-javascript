@@ -46,5 +46,15 @@ Método filter(), Método reduce (), asignación de desestructuración, Objetos 
 - getters and setters
 - class Thermostat
 
+## 7 Basic Regular Expressions
+
+- .test(testStr)
+- testStr = /hello/
+- petRegex = /dog|cat|bird|fish/;
+- /AutoDidacT/i; (Uppercase and lowercase letters)
+- .match(ourRegex);
+- vowelRegex = /[aeiou]/gi
+- bgRegexTwo = /[a-e]at/
+
 
 Learn more https://javascript.info/
