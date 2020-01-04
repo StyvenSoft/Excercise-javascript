@@ -86,10 +86,16 @@ const greaterThan1000 = jumbledNums.findIndex(num => {
 
 console.log(greaterThan1000);
 
-const animals = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
+const animalsTwo = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
 
-const foundAnimal = animals.findIndex(word =>{
+const foundAnimal = animalsTwo.findIndex(word =>{
   return word === 'elephant';
 });
 
 console.log(foundAnimal);
+
+const startsWithS = animalsTwo.findIndex(word =>{
+  return word[0] === 's';
+});
+  
+console.log(startsWithS);
