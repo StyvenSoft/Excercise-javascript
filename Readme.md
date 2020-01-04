@@ -57,4 +57,5 @@ Método filter(), Método reduce (), asignación de desestructuración, Objetos 
 - bgRegexTwo = /[a-e]at/
 
 
-Learn more https://javascript.info/
+* Learn more [Javascript](https://javascript.info/)
+* Learn iterations methods [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods) 

@@ -1,6 +1,6 @@
 // El método forEach()
 
-const colors = ['Blue','Red','Brown','Purple','Black']
+const colors = ['Blue','Red','Brown','Purple','Black'];
 
 colors.forEach(function(colorItem){
   console.log(` - ${colorItem}`);
@@ -99,3 +99,74 @@ const startsWithS = animalsTwo.findIndex(word =>{
 });
   
 console.log(startsWithS);
+
+// El método .reduce ()
+
+const numbersReduce = [1, 2, 4, 10];
+
+const summedNums = numbersReduce.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue
+})
+
+console.log(summedNums);
+
+const numbersAlter = [1, 2, 4, 10];
+
+const summedNumsAlter = numbersAlter.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue
+}, 100)  // <- Second argument for .reduce() Valor Inicial
+
+console.log(summedNumsAlter);
+
+
+const newNumbers = [1, 3, 5, 7];
+
+const newSum = newNumbers.reduce((accumulator, currentValue) =>{
+  console.log('The value of accumulator: ', accumulator);
+  console.log('The value of currentValue: ', currentValue);
+  return accumulator + currentValue;
+
+},10);
+
+console.log(newSum);
+
+// más iteradores
+
+const wordsIter = ['unique', 'uncanny', 'pique', 'oxymoron', 'guise'];
+
+console.log(wordsIter.some((word) => {
+  return word.length < 6;
+}));
+
+// Use filter to create a new array
+const interestingWords = wordsIter.filter(word => word.length > 5);
+
+console.log(interestingWords);
+// return elements that have length greater than 5.
+
+console.log(interestingWords.every((word) => {
+  return word.length > 5;
+} ));
+
+const cities = ['Orlando', 'Dubai', 'Edinburgh', 'Chennai', 'Accra', 'Denver', 'Eskisehir', 'Medellin', 'Yokohama'];
+
+const nums = [1, 50, 75, 200, 350, 525, 1000];
+
+
+cities.forEach(city => console.log('Have you visited ' + city + '?'));
+
+
+const longCities = cities.filter(city => city.length > 7);
+
+
+const word = cities.reduce((acc, currVal) => {
+  return acc + currVal[0]
+}, "C");
+
+console.log(word)
+
+
+const smallerNums = nums.map(num => num - 5);
+
+
+nums.some(num => num < 0);
