@@ -90,3 +90,20 @@ let quoteSampleG = "The quick brown fox jumps over the lazy dog.";
 let alphabetRegex = /[a-u]/gi; // Change this line
 let resultquoteG = quoteSample.match(alphabetRegex);
 console.log(resultquoteG);
+
+/*
+/-----Explicación del Código userCheck ----/
+^ - inicio de entrada negacion
+[a-z] - el primer caracter es una letra
+[0-9][0-9]+ - termina con dos o más números
+| - Significa ó
+[a-z]+ - tiene una o más letras al lado
+\d* - y termina con cero o más números
+$ - busca al final de entrada
+i - ignorar caso de entrada
+*/
+
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z]([0-9][0-9]+|[a-z]+\d*)$/i; 
+let resultUser = userCheck.test(username);
+console.log(resultUser);
