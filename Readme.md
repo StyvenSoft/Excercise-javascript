@@ -56,6 +56,13 @@ Método filter(), Método reduce (), asignación de desestructuración, Objetos 
 - vowelRegex = /[aeiou]/gi
 - bgRegexTwo = /[a-e]at/
 
+## 8 Basic Data Structures
+
+- Access an Array's
+- push() and unshift()
+- pop() and shift()
+
+
 
 * Learn more [Javascript](https://javascript.info/)
 * Learn iterations methods [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods) 
