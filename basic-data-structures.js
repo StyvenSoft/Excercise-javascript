@@ -95,3 +95,62 @@ function popShift(arr) {
 
 console.log(popShift(['challenge', 'is', 'not', 'complete']));
 
+// eliminar elementos mediante splice()
+// elimina cualquier número de elementos consecutivos de cualquier parte de una matriz
+
+let array = ['today', 'was', 'not', 'so', 'great'];
+
+array.splice(2, 2);
+
+console.log(array);
+
+let arrayLetters = ['I', 'am', 'feeling', 'really', 'happy'];
+
+let newArray = arrayLetters.splice(3, 2);
+
+console.log(newArray);
+
+// Example sum 10
+const arrSum = [2, 4, 5, 1, 7, 5, 2, 1];
+
+arrSum.shift();
+arrSum.splice(3, 4);
+
+console.log(arrSum);
+
+// agregar elementos mediante splice()
+
+const numbers = [10, 11, 12, 12, 15];
+const startIndex = 3; // Indice en el que comenzar a eliminar elementos
+const amountToDelete = 1; // número de elementos que se eliminarán
+
+numbers.splice(startIndex, amountToDelete, 13, 14);
+// se elimina la segunda entrada de 12, y agregamos 13 y 14 en el mismo índice
+console.log(numbers);
+
+function htmlColorNames(arr) {
+  arr.splice(0,2, 'DarkSalmon','BlanchedAlmond');
+  return arr;
+}
+
+// do not change code below this line
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']));
+
+
+// Método slice()
+// copias o extrae , un número dado de elementos a una nueva matriz
+
+let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+
+let todaysWeather = weatherConditions.slice(1, 3);
+
+console.log(weatherConditions);
+console.log(todaysWeather);
+
+
+function forecast(arr) {
+    
+  return arr.slice(2, 4);
+}
+
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
