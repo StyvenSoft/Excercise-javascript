@@ -62,7 +62,7 @@ console.log(romanNumerals);
 
 // Example function agregar elements
 function mixedNumbers(arr) {
-  
+
   arr.unshift('I', 2, 'three');
   arr.push(7, 'VIII', 9);
 
@@ -85,7 +85,7 @@ greetings.shift();
 
 console.log(greetings);
 
-// Example function delete elements 
+// Example function delete elements
 
 function popShift(arr) {
   let popped = arr.pop(); // Asignación de ultimo elemento
@@ -149,8 +149,96 @@ console.log(todaysWeather);
 
 
 function forecast(arr) {
-    
+
   return arr.slice(2, 4);
 }
 
 console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+
+// operador Spread "..."
+// el operador de propagación nos permite copiar fácilmente todos los elementos de una matriz, en orden
+
+let thisArray = [true, true, undefined, false, null];
+let thatArray = [...thisArray];
+
+// Example copia la cadena arr según el argumento num
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+      newArr.push([...arr]);
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));
+
+// combinar matrices con el operador de propagación "..."
+let thisArraywords = ['sage', 'rosemary', 'parsley', 'thyme'];
+
+let thatArraywords = ['basil', 'cilantro', ...thisArraywords, 'coriander'];
+
+console.log(thatArraywords);
+
+// Example
+
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is', 'fun'];
+  return sentence;
+}
+
+console.log(spreadOut());
+
+
+// Verificar elementos de una matriz con indexOf()
+
+let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
+
+fruits.indexOf('dates'); // returns -1
+fruits.indexOf('oranges'); // returns 2
+fruits.indexOf('pears'); // returns 1
+
+// example function para verificar la presencia de un elemento en una matriz
+
+function quickCheck(arr, elem) {
+  if(arr.indexOf(elem) !== -1){
+    return true
+  }
+  return false;
+}
+
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'onions'));
+
+// iterar a través de todos los elementos de una matriz utilizando bucles "For"
+
+// Example
+// funcion para buscar qué elementos de datos son mayores que 10
+
+function greaterThanTen(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 10) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+console.log(greaterThanTen([2, 12, 8, 14, 80, 0, 1]));
+
+// Compruela si el parametro elem se encuentra detro de una matriz anidada
+// sino se encuentra devuelve en un nuevo array
+
+function filteredArray(arr, elem) {
+  let newArr = [];
+
+  for(let i = 0; i < arr.length; i++){
+    if (arr[i].indexOf(elem) == -1) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+console.log(filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18));

@@ -62,9 +62,9 @@ Método filter(), Método reduce (), asignación de desestructuración, Objetos 
 - push() and unshift()
 - pop() and shift()
 - Metodo splice() and slice()
-
+- exercises Spread, indexOf(), for()
 
 ---
 
 * Learn more [Javascript](https://javascript.info/)
-* Learn iterations methods [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods) 
+* Learn iterations methods [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)
