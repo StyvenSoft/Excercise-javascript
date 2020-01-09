@@ -64,6 +64,14 @@ Método filter(), Método reduce (), asignación de desestructuración, Objetos 
 - Metodo splice() and slice()
 - exercises Spread, indexOf(), for()
 
+## 9 Lesson Objects
+
+- Bracket Notation
+- Property Assignment
+- Nested objects
+- Pass by reference
+- For...in
+
 ---
 
 * Learn more [Javascript](https://javascript.info/)
