@@ -171,3 +171,76 @@ function isEveryoneHere(obj) {
 }
 
 console.log(isEveryoneHere(users));
+
+for (let user in users) {
+  console.log(user);
+}
+
+let usersList = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+function countOnline(obj) {
+
+  let result = 0;
+  for (let user in obj) {
+    if (obj[user].online === true) {
+      result++;
+    }
+  }
+  return result;
+}
+console.log(countOnline(usersList));
+
+// generar una matriz de todas las claves de objeto con Object.keys()
+
+function getArrayOfUsers(obj) {
+  // change code below this line
+  return Object.keys(obj)
+  // change code above this line
+}
+
+console.log(getArrayOfUsers(usersList));
+
+// agregar propiedad a un objeto anidado
+let userInfo = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'Codefree',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+const addFriend = (userObj, friend) => {
+  let value = userObj.data.friends;
+  value.push(friend);
+  return value;
+}
+
+console.log(addFriend(userInfo, 'Peter'));
