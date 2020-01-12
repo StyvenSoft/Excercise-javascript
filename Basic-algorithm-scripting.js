@@ -29,3 +29,46 @@ function reverseStringSec(str) {
   return reversedStr;
 }
 console.log(reverseStringSec("Hello world"));
+
+// factorizar un número
+
+function factorialize(num) {
+
+  if(num === 0){
+    return 1;
+  }
+  return num * factorialize(num - 1);
+}
+
+console.log(factorialize(10));
+
+// encontrar la palabra más larga en una cadena
+
+function findLongestWordLength(str) {
+  var words = str.split(' ');
+  var maxLength = 0;
+
+  for (var i = 0; i < words.length; i++) {
+    if (words[i].length > maxLength) {
+      maxLength = words[i].length;
+    }
+  }
+
+  return maxLength;
+  //return str.length;
+}
+
+let result = findLongestWordLength("What is the average airspeed velocity of an unladen swallow");
+
+console.log(result);
+
+// devuelve los números más grandes en matrices
+
+
+function largestOfFour(arr) {
+  return arr.map(function(group) {
+    return group.reduce(function(prev, current) {
+      return current > prev ? current : prev;
+    });
+  });
+}
