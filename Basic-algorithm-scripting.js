@@ -72,3 +72,32 @@ function largestOfFour(arr) {
     });
   });
 }
+
+// confirmar el final de un string según un parametro dado
+
+function confirmEnding(str, target) {
+
+  return str.slice(str.length - target.length) === target;
+}
+
+confirmEnding("page is protected", "ed");
+
+// Repetir una cadena dada str(primer argumento) por numveces (segundo argumento).
+
+function repeatStringNumTimes(str, num) {
+
+   return num > 0 ? str + repeatStringNumTimes(str, num - 1) : '';
+}
+
+console.log(repeatStringNumTimes("repeat", 4));
+
+// Truncar o cortar una cadena (primer argumento) si es más larga que la longitud máxima de cadena dada
+
+function truncateString(str, num) {
+  let a = str.length;
+  let b = str.slice(0,num);
+  return (a > num) ? b + "..." : str;
+}
+
+let resutlT = truncateString("A-tisket a-tasket A green and yellow basket", 8);
+console.log(resutlT);
