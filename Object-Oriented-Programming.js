@@ -104,3 +104,108 @@ function DogTwo(name, color) {
 let terrier = new DogTwo("Aldre", "Black");
 
 console.log(terrier);
+
+// Verificar el Constructor de un Objeto con "instanceof"
+
+let BirdThree = function(name, color) {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 2;
+}
+
+let crow = new BirdThree("Alexis", "black");
+
+crow instanceof BirdThree; // => true
+
+// objeto sin usar un constructor
+
+let canary = {
+  name: "Mildred",
+  color: "Yellow",
+  numLegs: 2
+};
+
+canary instanceof Bird; // => false
+
+// Instanciando un constructores
+
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+
+let myHouse = new House(3);
+
+myHouse instanceof House;
+
+// comprendiendo las propiedades propias
+
+function BirdFour(name) {
+  this.name  = name;
+  this.numLegs = 2;
+}
+// se llaman own propiedades, porque se definen directamente en el objeto de instancia
+let rooster = new BirdFour("Donald");
+let toucan = new BirdFour("Tweety");
+
+let ownProps = [];
+
+// El método hasOwnProperty() devuelve un booleano indicando si el objeto tiene la propiedad especificada.
+for (let property in rooster) {
+  if(rooster.hasOwnProperty(property)) {
+    ownProps.push(property);
+  }
+}
+
+console.log(ownProps); // prints [ "name", "numLegs" ]
+
+// propiedades del prototipo para reducir el código duplicado
+
+function Rabbit(name) {
+  this.name = name;
+}
+
+Rabbit.prototype.numLegs = 4;
+
+// Add your code above this line
+let beagle = new Rabbit("Snop");
+
+console.log(beagle.numLegs);
+
+// iterando sobre todas las propiedades
+
+function DogFour(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let doberman = new DogFour("Snoopy");
+
+let ownPropsTwo = [];
+let prototypeProps = [];
+
+for(let property in doberman){
+  if(doberman.hasOwnProperty(property)){
+    ownPropsTwo.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+}
+
+console.log(ownPropsTwo); // prints ["name"]
+console.log(prototypeProps);  // prints ["numLegs"]
+
+// comprendiendo la propiedad "constructor"
+
+function DogFive(name) {
+  this.name = name;
+}
+
+// Add your code below this line
+function joinDogFraternity(candidate) {
+  if(candidate.constructor === DogFive){
+    return true;
+  } else {
+    return false;
+  }
+}

@@ -72,6 +72,15 @@ Método filter(), Método reduce (), asignación de desestructuración, Objetos 
 - Pass by reference
 - For...in
 
+## 10 Object Oriented Programming
+
+- methods and objects
+- "This"
+- Construction function
+- "instanceof"
+- hasOwnProperty()
+
+
 ---
 
 * Learn more [Javascript](https://javascript.info/)
