@@ -6,79 +6,94 @@ Método filter(), Método reduce (), asignación de desestructuración, Objetos 
 
 ## 1 Fundaments
 
-- printNumTwo
-- checkScope()
-- printManyTimes()
-- freezeObj()
-- doubler (item)
-- myConcat()
+- Variables: let y const
+- Verificar Scope
+- Funciones: anónimas, con parametros
+- Objeto congelado: Object.freeze
+- Use strict
+- Ciclo For()
 
 ## 2 Functions
 
-- greeting (name)
-- increment (number, value)
-- showData = (...datos)
-- showInfo = (...info)
+- Parametros Rest y Spread
+- El método map()
+- Método filter()
+- Método reduce()
 
 ## 3 Objects
 
-- const HIGH_TEMPERATURES
-- const LOCAL_FORECAST
-- removeFirstTwo(list)
-- half = ({ max, min })
+- Asignación de desestructuración
+- Objetos anidados
+- Método Object.keys()
+- Método Object.values()
 
 ## 4 Loops and Iterators
 
-- timeFuncRuntime (funcParameter)
-- addOneToOne = ()
-- Ciclo For
+- Bucles anidados
 - Ciclo While
+- Ciclo Do While
+- Ciclo For, Break;
+- Método forEach()
+- Operador typeof
 
 ## 5 Template Literals string
 
-- makeList(arr)
+- Uso template strings
+- Método Object.entries()
 - Objeto abreviado
 - Funcion declarativa
 
 ## 6 Sintaxis básica de clase
 
-- SpaceShuttle (targetPlanet)
+- Instancia de un objeto
+- Nueva sintaxis para crear objetos
+- Captadores y establecedores:
 - getters and setters
-- class Thermostat
+- Class function
 
 ## 7 Basic Regular Expressions
 
-- .test(testStr)
-- testStr = /hello/
-- petRegex = /dog|cat|bird|fish/;
-- /AutoDidacT/i; (Uppercase and lowercase letters)
-- .match(ourRegex);
-- vowelRegex = /[aeiou]/gi
-- bgRegexTwo = /[a-e]at/
+- Buscar una cadena especificada: Método test()
+- Ignora mayusculas y minusculas "i"  (Uppercase and lowercase)
+- Obtener todas las ocurrencias dentro de una cadena: Método Match()
+- Buscar o extraer un patrón más de una vez "g"
+- Unir cualquier cosa con el período comodín "."
+- Definir un rango de caracteres "[-]"
+- especificar la posible existencia de un elemento "?"
+- Los lookaheads para buscar patrones más adelante (?=...)
+- buscar y reemplazar texto en una cadena usando .replace()
 
 ## 8 Basic Data Structures
 
-- Access an Array's
-- push() and unshift()
-- pop() and shift()
-- Metodo splice() and slice()
-- exercises Spread, indexOf(), for()
+- Matriz unidimensional
+- Matriz multidimensional
+- Acceder a matriz con notación de corchetes
+- Métodos push() y unshift()
+- Métodos pop() y shift()
+- Métodos splice() y slice()
+- Exercises Spread, indexOf(), for()
 
 ## 9 Lesson Objects
 
-- Bracket Notation
-- Property Assignment
-- Nested objects
-- Pass by reference
-- For...in
+- Notación de puntos y notación de corchetes.
+- Asignación de propiedades
+- Objetos anidados (Nested objects)
+- Pasar por referencia
+- Cambio de parametros por referencia
+- Recorriendo objetos for...in
 
 ## 10 Object Oriented Programming
 
+- Creacion de objetos simples
+- Creando métodos en un objeto
 - methods and objects
-- "This"
-- Construction function
-- "instanceof"
-- hasOwnProperty()
+- Reutilizar objeto con la palabra clave "This"
+- Definir una Función Constructora
+- Pasando los valores como argumentos
+- Verificar el Constructor de un Objeto con "instanceof"
+- El método hasOwnProperty()
+- Iterando sobre todas las propiedades
+- La propiedad "prototype", El método isPrototypeOf()
 
 
 ---

@@ -209,3 +209,84 @@ function joinDogFraternity(candidate) {
     return false;
   }
 }
+
+// Estbleciendo prototipo a un nuevo objeto
+
+function DogSix(name) {
+  this.name = name;
+}
+
+DogSix.prototype = {
+  numLegs : 2,
+  eat : function(){
+    console.log("purine");
+  },
+  describe : function(){
+    console.log("Name is " + this.name)
+  }
+};
+
+// recordar establecer la propiedad del constructor al cambiar el prototipo
+
+Bird.prototype = {
+  constructor: Bird, // the constructor property
+  numLegs: 2,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype = {
+  constructor: Dog,
+  numLegs: 4,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+
+// un objeto hereda prototype directamente de la función constructora que lo creó
+
+function Character(name, posX, postY){
+  this.name = name;
+  this.posX = posX;
+  this.postY = postY;
+
+  this.moveX = function(){
+    this.posX++;
+  }
+  this.moveY = function(){
+    this.postY++;
+  }
+}
+// isPrototypeOf
+
+function DogNine(name) {
+  this.name = name;
+}
+
+let beagleNine = new DogNine("Snoopy");
+
+DogNine.prototype.isPrototypeOf(beagleNine);
+
+//  La propiedad "prototype" 
+
+let personajeOne = new Character("Elfo", 100, 200);
+let personajeTwo = new Character("Dimy", 150, 200);
+
+console.log("Nombre: " + personajeOne.name + " posición x = " + personajeOne.posX);
+
+Character.prototype.lifeLevel = 0;
+personajeOne.lifeLevel = 100;
+
+console.log("Nivel de vida: "+ personajeOne.lifeLevel + " " + personajeOne.name);
+console.log("Nivel de vida: "+ personajeTwo.lifeLevel + " " + personajeTwo.name);
