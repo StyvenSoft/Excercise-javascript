@@ -278,7 +278,7 @@ let beagleNine = new DogNine("Snoopy");
 
 DogNine.prototype.isPrototypeOf(beagleNine);
 
-//  La propiedad "prototype" 
+//  La propiedad "prototype"
 
 let personajeOne = new Character("Elfo", 100, 200);
 let personajeTwo = new Character("Dimy", 150, 200);
@@ -290,3 +290,109 @@ personajeOne.lifeLevel = 100;
 
 console.log("Nivel de vida: "+ personajeOne.lifeLevel + " " + personajeOne.name);
 console.log("Nivel de vida: "+ personajeTwo.lifeLevel + " " + personajeTwo.name);
+
+// usamdo la herencia para no repetirse
+
+function Animal() { };
+
+Animal.prototype = {
+  constructor: Animal,
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+
+Bird.prototype = {
+  constructor: Bird
+};
+
+Dog.prototype = {
+  constructor: Dog
+};
+
+// Don't Repeat Yourself (DRY)
+
+function Cat(name) {
+  this.name = name;
+}
+
+Cat.prototype = {
+  constructor: Cat,
+
+};
+
+function Bear(name) {
+  this.name = name;
+}
+
+Bear.prototype = {
+  constructor: Bear,
+
+};
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+// Heredar Comportamientos de un Supertipo
+// Object.create(obj)
+
+let duckThree = Object.create(Animal.prototype);
+let beagleThree = Object.create(Animal.prototype);
+
+duckThree.eat(); // Should print "nom nom nom"
+beagleThree.eat(); // Should print "nom nom nom"
+
+//  instancias de Dog heredando de Animal.
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype);
+
+let beagleFive = new Dog('Luck');
+beagleFive.eat();  // Should print "nom nom nom"
+
+
+// restableciendo una propiedad de constructor heredada
+
+function AnimalHer() { }
+function BirdHer() { }
+function DogHer() { }
+
+BirdHer.prototype = Object.create(AnimalHer.prototype);
+DogHer.prototype = Object.create(AnimalHer.prototype);
+
+// Add your code below this line
+
+BirdHer.prototype.constructor = BirdHer;
+DogHer.prototype.constructor = DogHer;
+
+let duckHer = new BirdHer();
+let beagleHer = new DogHer();
+
+duckHer.constructor
+beagleHer.constructor
+
+
+// Agreguando Métodos Después de Herencia
+
+function AnimalOne() { }
+AnimalOne.prototype.eat = function() { console.log("Lok Lok"); };
+
+function DogPug() { }
+
+DogPug.prototype = Object.create(AnimalOne.prototype);
+DogPug.prototype.constructor = DogPug;
+
+DogPug.prototype.bark = function() {
+    console.log("Woof!")
+}
+
+let beagleOther = new DogPug();
+
+beagleOther.eat(); // Should print "nom nom nom"
+beagleOther.bark(); // Should print "Woof!"
