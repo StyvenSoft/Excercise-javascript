@@ -95,8 +95,15 @@ Método filter(), Método reduce (), asignación de desestructuración, Objetos 
 - Iterando sobre todas las propiedades
 - La propiedad "prototype", El método isPrototypeOf()
 
+## 11 More topics POO JavaScript
+
+- Anular métodos heredados
+- Usando un mixins
+- Utilizando closure para proteger las propiedades
+- la Expresión de Función Invocada Inmediatamente (IIFE)
 
 ---
 
 * Learn more [Javascript](https://javascript.info/)
 * Learn iterations methods [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)
+* Learn Introduction [Object Oriented Programming](https://developer.mozilla.org/es/docs/Web/JavaScript/Introducci%C3%B3n_a_JavaScript_orientado_a_objetos)
