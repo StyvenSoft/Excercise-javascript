@@ -107,3 +107,60 @@ var finalTabs = socialWindow
                     .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
                     .join(workWindow.tabClose(1).tabOpen());
 console.log(finalTabs.tabs);
+
+// Function Incremental
+
+var fixedValue = 4;
+
+function incrementer () {
+   return fixedValue + 1;
+
+}
+
+var newValue = incrementer(); // Should equal 5
+console.log(fixedValue); // Should print 4
+
+
+var fixedValueTwo = 6;
+
+function incrementer (value) {
+  return value + 1;
+}
+
+var newValue = incrementer(fixedValue);
+console.log(fixedValue);
+
+var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+/* This function should add a book to the list and return the list */
+// New parameters should come before bookName
+
+// Add your code below this line
+function add (bookName) {
+
+  bookList.push(bookName);
+  return bookList;
+
+  // Add your code above this line
+}
+
+/* This function should remove a book from the list and return the list */
+// New parameters should come before the bookName one
+
+// Add your code below this line
+function remove (bookName) {
+  var book_index = bookList.indexOf(bookName);
+  if (book_index >= 0) {
+
+    bookList.splice(book_index, 1);
+    return bookList;
+
+    // Add your code above this line
+    }
+}
+
+var newBookList = add(bookList, 'A Brief History of Time');
+var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
+var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+
+console.log(bookList);
