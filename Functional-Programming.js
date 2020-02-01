@@ -364,3 +364,77 @@ Array.prototype.myFilter = function(callback){
 var new_s = s.myFilter(function(item){
   return item % 2 === 1;
 });
+
+
+// devolver parte de una matriz utilizando el método Slice
+
+var arr = ["Cat", "Dog", "Tiger", "Zebra"];
+var newArray = arr.slice(1, 3);
+// Sets newArray to ["Dog", "Tiger"]
+
+
+// Función slice()
+
+function sliceArray(anim, beginSlice, endSlice) {
+
+  var newArray = anim.slice(beginSlice, endSlice);
+  return newArray;
+
+}
+var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+console.log(sliceArray(inputAnim, 1, 4));
+
+// eliminar elementos de una matriz utilizando "slice" en lugar de un "splice"
+
+
+var cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+cities.splice(3, 1); // Returns "London" and deletes it from the cities array
+// cities is now ["Chicago", "Delhi", "Islamabad", "Berlin"]
+
+// Usando el método slice
+
+function nonMutatingSplice(cities) {
+
+  return cities.slice(0, 3);
+
+}
+var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+nonMutatingSplice(inputCities);
+
+console.log(nonMutatingSplice(inputCities));
+
+// combinar dos matrices utilizando el método concat
+
+// Ejemplo sencillo para concatenar dos matrices
+
+[1, 2, 3].concat([4, 5, 6]);
+// Returns a new array [1, 2, 3, 4, 5, 6]
+
+// Funcion para concatener
+
+function nonMutatingConcat(original, attach) {
+
+  return original.concat(attach);
+}
+var first = [1, 2, 3, 4, 5, 6];
+var second = [7, 8, 9];
+console.log(nonMutatingConcat(first, second));
+
+// agregue elementos al final de una matriz usando concat en lugar de push
+
+// Ejemplo de push
+
+var arr = [1, 2, 3];
+arr.push([4, 5, 6]);
+// arr is changed to [1, 2, 3, [4, 5, 6]]
+// No es la forma de programación funcional.
+
+// Función de retorno con método contact
+
+function nonMutatingPush(original, newItem) {
+  return original.concat(newItem);
+
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+console.log(nonMutatingPush(first, second));
