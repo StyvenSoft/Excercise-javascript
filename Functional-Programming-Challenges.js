@@ -212,3 +212,46 @@ function nonMutatingSort(arr) {
 
 }
 nonMutatingSort(globalArray);
+
+// dividir una cadena en una matriz utilizando el método de división
+
+function splitify(str) {
+
+  return str.split(/\W/);
+}
+splitify("Hello World,I-am code");
+
+// combinar una matriz en una cadena utilizando el método de unión
+
+var arr = ["Hello", "World"];
+var str = arr.join(" ");
+// Sets str to "Hello World"
+
+// aplique la programación funcional para convertir cadenas en slugs de URL
+
+var globalTitle = "Winter Is Coming";
+
+function urlSlug(title) {
+  return title
+    .split(/\W/)
+    .filter(obj => {
+      return obj !== "";
+    })
+    .join("-")
+    .toLowerCase();
+}
+
+var winterComing = urlSlug(globalTitle);
+
+// use todos los métodos para verificar que cada elemento en una matriz cumpla con un criterio
+
+var numbers = [1, 5, 8, 0, 10, 11];
+numbers.every(function(currentValue) {
+  return currentValue < 10;
+});
+// Returns false
+
+function checkPositive(arr) {
+  return arr.every(val => val > 0);
+}
+checkPositive([1, 2, 3, -4, 5]);
