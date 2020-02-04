@@ -255,3 +255,66 @@ function checkPositive(arr) {
   return arr.every(val => val > 0);
 }
 checkPositive([1, 2, 3, -4, 5]);
+
+
+//  utilizando el método some() para verificar que cualquier elemento de una matriz cumpla con un criterio
+
+
+var numbers = [10, 50, 8, 220, 110, 11];
+numbers.some(function(currentValue) {
+  return currentValue < 10;
+});
+// Returns true
+
+
+function checkPositive(arr) {
+  return arr.some(value => value > 0)
+
+}
+checkPositive([1, 2, 3, -4, 5]);
+
+
+// introducción al currying y aplicación parcial
+
+//Un-curried function
+function unCurried(x, y) {
+  return x + y;
+}
+
+//Curried function
+function curried(x) {
+  return function(y) {
+    return x + y;
+  }
+}
+//Alternative using ES6
+const curriedTwo = x => y => x + y
+
+curriedTwo(1)(2) // Returns 3
+
+//  ejemplo usando la función curry en el ejemplo anterior
+
+// Call a curried function in parts:
+var funcForY = curried(1);
+console.log(funcForY(2)); // Prints 3
+
+
+//Impartial function
+function impartial(x, y, z) {
+  return x + y + z;
+}
+var partialFn = impartial.bind(this, 1, 2);
+partialFn(10); // Returns 13
+
+// ejemplo añadiendo 3 parametros
+
+function add(x) {
+  // Add your code below this line
+  return function(y) {
+    return function(z) {
+      return x + y + z;
+    };
+  };
+  // Add your code above this line
+}
+add(10)(20)(30);
