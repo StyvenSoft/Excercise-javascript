@@ -102,6 +102,15 @@ Método filter(), Método reduce (), asignación de desestructuración, Objetos 
 - Utilizando closure para proteger las propiedades
 - la Expresión de Función Invocada Inmediatamente (IIFE)
 
+## 12 Functional Programming JS
+
+- Aplicando el método map()
+- El método JSON.stringify()
+- Utilizando Array.prototype.filter()
+- Eliminar elementos de una matriz utilizando "slice"
+- Función de retorno con método concat()
+
+
 ---
 
 * Learn more [Javascript](https://javascript.info/)
