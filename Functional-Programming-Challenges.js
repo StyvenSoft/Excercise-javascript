@@ -318,3 +318,48 @@ function add(x) {
   // Add your code above this line
 }
 add(10)(20)(30);
+
+function myReplace(str, before, after) {
+
+if (before[0] === before[0].toUpperCase()) {
+    after = after[0].toUpperCase() + after.slice(1);
+}
+str = str.replace(before, after);
+return str;
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+
+function pairElement(str) {
+  const mapping = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'};
+  return str.split('').map(item => [item, mapping[item]]);
+}
+
+pairElement("GCG");
+
+function fearNotLetter(str) {
+  var codePoints = str.split("").map(function(char, index) {
+    return str.charCodeAt(index);
+  });
+
+  for (var i = 1; i < codePoints.length; i++) {
+    if (codePoints[i-1] !== codePoints[i]-1) {
+      return String.fromCharCode(codePoints[i]-1);
+    }
+  }
+
+  return undefined;
+}
+
+fearNotLetter("abce");
+
+function uniteUnique(...arr) {
+          return arr.reduce(function(all,item){
+             return all.concat(item).filter(function(el,index,self){
+                 return index == self.indexOf(el);
+             });
+          });
+        }
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
