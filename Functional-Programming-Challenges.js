@@ -338,6 +338,8 @@ function pairElement(str) {
 
 pairElement("GCG");
 
+// Cartas perdidas
+
 function fearNotLetter(str) {
   var codePoints = str.split("").map(function(char, index) {
     return str.charCodeAt(index);
@@ -354,6 +356,8 @@ function fearNotLetter(str) {
 
 fearNotLetter("abce");
 
+// Unión clasificada
+
 function uniteUnique(...arr) {
           return arr.reduce(function(all,item){
              return all.concat(item).filter(function(el,index,self){
@@ -363,3 +367,71 @@ function uniteUnique(...arr) {
         }
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+// Convert HTML Entities
+
+function convertHTML(str) {
+  // &colon;&rpar;
+
+  var newStr = str.split("");
+
+  var character = ["&", "<", ">", "\"", "'"];
+  var entity = ["&amp;", "&lt;", "&gt;", "&quot;", "&apos;"];
+
+  for (var i = 0; i < newStr.length; i++ ) {
+
+    if (character.indexOf(newStr[i]) > -1) {
+      newStr[i] = entity[character.indexOf(newStr[i])];
+    }
+
+  }
+
+  var result = newStr.join("");
+  return result;
+
+}
+
+convertHTML("Dolce & Gabbana");
+
+// Suma todos los números impares de Fibonacci
+
+function sumFibs(num) {
+  var prevNumber = 0;
+  var currNumber = 1;
+  var result = 0;
+  while (currNumber <= num) {
+    if (currNumber % 2 !== 0) {
+      result += currNumber;
+    }
+    currNumber += prevNumber;
+    prevNumber = currNumber - prevNumber;
+  }
+  return result;
+}
+
+// test here
+sumFibs(4);
+
+
+// Suma todos los primos
+
+function sumPrimes(num) {
+  let i = 1;
+  let sum = 0;
+  while (i <= num) {
+    if (isPrime(i)) {
+      sum += i;
+    }
+    i++;
+  }
+  return sum;
+}
+//function to check if a number is prime or not
+function isPrime(x) {
+  for (let i = 2; i < x; i++) {
+    if (x % i === 0) return false;
+  }
+  return x !== 1 && x !== 0;
+}
+
+sumPrimes(10);
