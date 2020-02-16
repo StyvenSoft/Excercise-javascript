@@ -65,3 +65,61 @@ class Animal {
     this._behavior++;
   }
 }
+
+// extender clase Cat
+
+class Cat extends Animal {
+  constructor(name, usesLitter) {
+    super(name);
+    this._usesLitter = usesLitter;
+  }
+}
+
+// Creando una instancia de la clase promise.catch((err) => {
+
+});
+const bryceCat = new Cat('Bryce', false);
+console.log(bryceCat._name); // output: Bryce
+
+// Ejercicio herencia en clase empleados hospital
+
+class HospitalEmployee {
+  constructor(name) {
+    this._name = name;
+    this._remainingVacationDays = 20;
+  }
+  get name() {
+    return this._name;
+  }
+
+  get remainingVacationDays () {
+    return this._remainingVacationDays ;
+  }
+  takeVacationDays(daysOff){
+    this._remainingVacationDays -= daysOff;
+  }
+}
+
+class Doctor {
+  constructor(name) {
+    this._name = name;
+    this._remainingVacationDays = 20;
+    this._insurance = insurance;
+  }
+}
+class Nuerse {
+    constructor(name) {
+    this._name = name;
+    this._remainingVacationDays = 20;
+    this._certifications = certifications;
+  }
+}
+
+class Nurse extends HospitalEmployee {
+  constructor(name, certifications){
+    super(name);
+    this._certifications = certifications;
+  }
+}
+
+const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
