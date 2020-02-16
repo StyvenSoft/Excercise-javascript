@@ -72,7 +72,7 @@ class Animal {
 
 // extender clase Cat
 
-class Cat extends Animal {
+class CatTwo extends Animal {
   constructor(name, usesLitter) {
     super(name);
     this._usesLitter = usesLitter;
@@ -81,7 +81,6 @@ class Cat extends Animal {
 
 // Creando una instancia de la clase promise.catch((err) => {
 
-});
 const bryceCat = new Cat('Bryce', false);
 console.log(bryceCat._name); // output: Bryce
 
@@ -101,6 +100,10 @@ class HospitalEmployee {
   }
   takeVacationDays(daysOff){
     this._remainingVacationDays -= daysOff;
+  }
+  static generatePassword() {
+  const randonNumber = Math.floor(Math.random() * 10000);
+   return randonNumber;
   }
 }
 
@@ -124,9 +127,19 @@ class Nurse extends HospitalEmployee {
     super(name);
     this._certifications = certifications;
   }
+  get certifications(){
+    return this._certifications;
+  }
+  addCertification(newCertification){
+    this._certifications.push(newCertification);
+  }
 }
 
 const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
 
 nurseOlynyk.takeVacationDays(5);
 console.log(nurseOlynyk.remainingVacationDays);
+
+nurseOlynyk.addCertification('Genetics');
+
+console.log(nurseOlynyk.certifications);
