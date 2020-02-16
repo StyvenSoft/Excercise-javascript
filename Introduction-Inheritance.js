@@ -64,6 +64,10 @@ class Animal {
   incrementBehavior() {
     this._behavior++;
   }
+
+  get usesLitter() {
+    return this._usesLitter;
+  }
 }
 
 // extender clase Cat
@@ -123,3 +127,6 @@ class Nurse extends HospitalEmployee {
 }
 
 const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
+
+nurseOlynyk.takeVacationDays(5);
+console.log(nurseOlynyk.remainingVacationDays);
