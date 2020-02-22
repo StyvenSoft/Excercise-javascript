@@ -70,3 +70,60 @@ Airplane.availableAirplanes = [
 ];
 
 export default Airplane;
+
+
+// import (palabra clave para importar objetos)
+
+import Menu from './menu';
+
+function displayFuelCapacity(){
+  Airplane.availableAirplanes.forEach(function(element){
+    console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);
+  });
+};
+
+displayFuelCapacity();
+
+// Fuel Capacity of AeroJet: 800
+// Fuel Capacity of SkyJet: 500
+
+
+// Named Exports
+// Las exportaciones con nombre nos permiten exportar datos mediante el uso de variables.
+
+let specialty = '';
+function isVegetarian() {
+};
+function isLowSodium() {
+};
+
+export { specialty, isVegetarian };
+
+// Second example "Named Exports"
+let availableAirplanes = [
+  {
+    name: 'AeroJet',
+    fuelCapacity: 800,
+    availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
+  },
+  {
+  name: 'SkyJet',
+  fuelCapacity: 500,
+  availableStaff: ['pilots', 'flightAttendants']
+  }
+];
+
+let flightRequirements = {
+  requiredStaff : 4
+};
+
+function meetsStaffRequirements(availableStaff, requiredStaff) {
+  if (availableStaff.length >= requiredStaff) {
+      return true;
+      }
+  else {
+    return false;
+  }
+}
+
+export { availableAirplanes, flightRequirements, meetsStaffRequirements };
