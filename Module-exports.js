@@ -127,3 +127,88 @@ function meetsStaffRequirements(availableStaff, requiredStaff) {
 }
 
 export { availableAirplanes, flightRequirements, meetsStaffRequirements };
+
+// Named Imports
+// importar objetos almacenados en una variable
+
+import { specialty, isVegetarian } from './menu';
+console.log(specialty);
+
+// Example
+
+import { availableAirplanes, flightRequirements, meetsStaffRequirements  } from './airplane';
+
+function displayFuelCapacity(){
+  availableAirplanes.forEach(function(element){
+    console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);
+  });
+};
+
+displayFuelCapacity();
+
+function displayStaffStatus(){
+availableAirplanes.forEach(function(element){
+  console.log(element.name + ' meets staff requirements: ' + meetsStaffRequirements(element.availableStaff, flightRequirements.requiredStaff) );
+});
+}
+
+displayStaffStatus();
+
+// Output:
+//
+// Fuel Capacity of AeroJet: 800
+// Fuel Capacity of SkyJet: 500
+// AeroJet meets staff requirements: true
+// SkyJet meets staff requirements: false
+
+
+// Export Named Exports
+// se pueden exportar tan pronto como se declaran
+
+export let specialty = '';
+export function isVegetarian() {
+};
+function isLowSodium() {
+};
+
+// example Named exports
+
+export let availableAirplanes = [
+  {
+    name: 'AeroJet',
+    fuelCapacity: 800,
+    availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
+    maxSpeed : 1200,
+    minSpeed : 300
+  },
+  {
+  name: 'SkyJet',
+  fuelCapacity: 500,
+  availableStaff: ['pilots', 'flightAttendants'],
+  maxSpeed : 800,
+  minSpeed : 200
+  }
+];
+
+export let flightRequirements = {
+  requiredStaff : 4,
+  requiredSpeedRange : 700
+};
+
+export function meetsStaffRequirements(availableStaff, requiredStaff) {
+  if (availableStaff.length >= requiredStaff) {
+      return true;
+      }
+  else {
+    return false;
+  }
+}
+
+export function meetsSpeedRangeRequirements(maxSpeed, minSpeed, requiredSpeedRange) {
+  let range = maxSpeed - minSpeed;
+  if(range > requiredSpeedRange){
+     return true;
+  }else {
+    return false;
+  }
+};
