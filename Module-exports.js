@@ -212,3 +212,114 @@ export function meetsSpeedRangeRequirements(maxSpeed, minSpeed, requiredSpeedRan
     return false;
   }
 };
+
+// Import Named Imports
+// Para importar variables declaradas, simplemente usamos la sintaxis original
+
+import { specialty, isVegetarian } from 'menu';
+
+import { availableAirplanes, flightRequirements, meetsStaffRequirements, meetsSpeedRangeRequirements } from './airplane';
+
+function displaySpeedRangeStatus() {
+  availableAirplanes.forEach(function(element) {
+   console.log(element.name + ' meets speed range requirements: ' + meetsSpeedRangeRequirements(element.maxSpeed, element.minSpeed, flightRequirements.requiredSpeedRange));
+  });
+}
+displaySpeedRangeStatus()
+
+// Export as
+// cambiar el nombre de las variables cuando las exportamos o importamos.
+
+let specialty = '';
+let isVegetarian = function() {
+};
+let isLowSodium = function() {
+};
+
+export { specialty as chefsSpecial, isVegetarian as isVeg, isLowSodium };
+
+
+//Import as
+// agregamos la variable con alias en nuestra declaración de importación.
+
+import { chefsSpecial, isVeg } from './menu';
+
+// Otra forma de usar alias es importar todo el módulo como un alias
+
+import * as Carte from './menu';
+
+Carte.chefsSpecial;
+Carte.isVeg();
+Carte.isLowSodium();
+
+// Example availableAirplanes
+
+
+import { aircrafts, flightReqs, meetsStaffReqs, meetsSpeedRangeReqs } from './airplane';
+
+function displayFuelCapacity(){
+  aircrafts.forEach(function(element){
+    console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);
+  });
+};
+
+displayFuelCapacity();
+
+function displayStaffStatus(){
+aircrafts.forEach(function(element){
+  console.log(element.name + ' meets staff requirements: ' + meetsStaffReqs(element.availableStaff, flightReqs.requiredStaff) );
+});
+}
+
+displayStaffStatus();
+
+function displaySpeedRangeStatus() {
+  aircrafts.forEach(function(element) {
+   console.log(element.name + ' meets speed range requirements: ' + meetsStaffReqs(element.maxSpeed, element.minSpeed, flightReqs.requiredSpeedRange));
+  });
+}
+displaySpeedRangeStatus()
+
+// Oputput:
+
+// Fuel Capacity of AeroJet: 800
+// Fuel Capacity of SkyJet: 500
+// AeroJet meets staff requirements: true
+// SkyJet meets staff requirements: false
+// AeroJet meets speed range requirements: false
+// SkyJet meets speed range requirements: false
+
+
+// Combining Export Statements
+
+let specialty = '';
+function isVegetarian() {
+};
+function isLowSodium() {
+};
+function isGlutenFree() {
+};
+
+export { specialty as chefsSpecial, isVegetarian as isVeg };
+export default isGlutenFree;
+
+// variables declaradas y exportadas otras con la export
+
+export let Menu = {};
+
+export let specialty = '';
+export let isVegetarian = function() {
+};
+export let isLowSodium = function() {
+};
+let isGlutenFree = function() {
+};
+
+export default isGlutenFree;
+
+// Combining Import Statements
+// Podemos usar una importpalabra clave para importar ambos tipos de variables
+
+import { specialty, isVegetarian, isLowSodium } from './menu';
+
+import GlutenFree from './menu';
