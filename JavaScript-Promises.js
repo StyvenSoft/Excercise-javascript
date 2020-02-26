@@ -29,3 +29,32 @@ const myExecutor = (resolve, reject) =>{
     reject('That item is sold out.')
   }
 }
+
+const orderSunglasses = () =>{
+  return new Promise(myExecutor);
+}
+const orderPromise = orderSunglasses();
+
+console.log(orderPromise);
+
+// run: node app.js
+//Oputput: Promise { 'Sunglasses order processed.' }
+
+
+//The Node setTimeout() Function
+// Usando los Promise objetos devueltos como resultado de una operación asincrónica.
+
+const delayedHello = () => {
+  console.log('Hi! This is an asynchronous greeting!');
+};
+
+setTimeout(delayedHello, 2000);
+
+console.log("This is the first line of code in app.js.");
+
+const usingSTO = () =>{
+  console.log('Yay! Coding is so fun!!');
+}
+setTimeout(usingSTO, 2000);
+
+console.log("This is the last line of code in app.js.");
