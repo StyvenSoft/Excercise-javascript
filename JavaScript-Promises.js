@@ -58,3 +58,54 @@ const usingSTO = () =>{
 setTimeout(usingSTO, 2000);
 
 console.log("This is the last line of code in app.js.");
+
+// Las funciones onFulfilled y onRejected
+// Para manejar una promesa "exitosa", o una promesa que se resolvió, invocamos .then()
+
+const prom = new Promise((resolve, reject) => {
+  resolve('Yay!');
+});
+
+const handleSuccess = (resolvedValue) => {
+  console.log(resolvedValue);
+};
+
+prom.then(handleSuccess); // Prints: 'Yay!'
+
+// Podemos pasar un onFulfilledy una onRejecteddevolución de llamada a .then().
+
+let prom = new Promise((resolve, reject) => {
+  let num = Math.random();
+  if (num < .5 ){
+    resolve('Yay!');
+  } else {
+    reject('Ohhh noooo!');
+  }
+});
+
+const handleSuccess = (resolvedValue) => {
+  console.log(resolvedValue);
+};
+
+const handleFailure = (rejectionReason) => {
+  console.log(rejectionReason);
+};
+
+prom.then(handleSuccess, handleFailure);
+
+// Example verificar inventario
+
+const {checkInventory} = require('./library.js');
+
+const order = [['sunglasses', 1], ['bags', 2]];
+
+
+const  handleSuccess = (value) => {
+  console.log(value);
+};
+
+const handleFailure = (value) =>{
+  console.log(value);
+};
+
+checkInventory(order).then(handleSuccess, handleFailure);
