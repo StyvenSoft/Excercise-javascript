@@ -149,3 +149,40 @@ const handleFailure = (rejectReason) => {
 checkInventory(order)
 .then(handleSuccess)
 .catch(handleFailure);
+
+
+// Encadenando múltiples promesas
+// con la programación asincrónica se pueden hacer múltiples operaciones que dependen unas de otras para ejecutarse
+
+firstPromiseFunction()
+.then((firstResolveVal) => {
+  return secondPromiseFunction(firstResolveVal);
+})
+.then((secondResolveVal) => {
+  console.log(secondResolveVal);
+});
+
+// Si hay suficientes artículos en stock para completar el pedido, la promesa se resolverá en una matriz.
+
+const {checkInventory, processPayment, shipOrder} = require('./library.js');
+
+const order = {
+  items: [['sunglasses', 1], ['bags', 2]],
+  giftcardBalance: 79.82
+};
+
+checkInventory(order)
+.then((resolvedValueArray) => {
+
+   return processPayment(resolvedValueArray);
+})
+.then((resolvedValueArray) => {
+  
+    return shipOrder(resolvedValueArray);
+})
+.then((successMessage) => {
+  console.log(successMessage);
+})
+.catch((errorMessage) => {
+  console.log(errorMessage);
+});
