@@ -109,3 +109,43 @@ const handleFailure = (value) =>{
 };
 
 checkInventory(order).then(handleSuccess, handleFailure);
+
+// Usando catch () con Promesas
+//  encadenar un segundo .then()
+
+prom
+  .then((resolvedValue) => {
+    console.log(resolvedValue);
+  })
+  .then(null, (rejectionReason) => {
+    console.log(rejectionReason);
+  });
+
+  // ejemplo usando .catch()
+
+  prom
+  .then((resolvedValue) => {
+    console.log(resolvedValue);
+  })
+  .catch((rejectionReason) => {
+    console.log(rejectionReason);
+  });
+
+
+//  refactorizar la funcionalidad del ejercicio
+
+const {checkInventory} = require('./library.js');
+
+const order = [['sunglasses', 1], ['bags', 2]];
+
+const handleSuccess = (resolvedValue) => {
+  console.log(resolvedValue);
+};
+
+const handleFailure = (rejectReason) => {
+  console.log(rejectReason);
+};
+
+checkInventory(order)
+.then(handleSuccess)
+.catch(handleFailure);
