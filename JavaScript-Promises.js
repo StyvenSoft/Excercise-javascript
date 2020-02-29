@@ -177,7 +177,7 @@ checkInventory(order)
    return processPayment(resolvedValueArray);
 })
 .then((resolvedValueArray) => {
-  
+
     return shipOrder(resolvedValueArray);
 })
 .then((successMessage) => {
@@ -186,3 +186,84 @@ checkInventory(order)
 .catch((errorMessage) => {
   console.log(errorMessage);
 });
+
+// Evitando errores comunes
+
+// Error 1: Anidar promesas en lugar de encadenarlas.
+
+returnsFirstPromise()
+.then((firstResolveVal) => {
+  return returnsSecondValue(firstResolveVal)
+    .then((secondResolveVal) => {
+      console.log(secondResolveVal);
+    })
+})
+
+// Error 2: Olvidarse de returnuna promesa.
+
+returnsFirstPromise()
+.then((firstResolveVal) => {
+  returnsSecondValue(firstResolveVal)
+})
+.then((someVal) => {
+  console.log(someVal);
+})
+
+// Dado que olvidarse de return nuestra promesa no arrojará un error,
+// ¡esto puede ser algo realmente difícil de depurar!
+
+// Ejercicio refactorizado
+
+const {checkInventory, processPayment, shipOrder} = require('./library.js');
+
+const order = {
+  items: [['sunglasses', 1], ['bags', 2]],
+  giftcardBalance: 79.82
+};
+
+checkInventory(order)
+.then((resolvedValueArray) => {
+  return processPayment(resolvedValueArray);
+})
+.then((resolvedValueArray) => {
+  return shipOrder(resolvedValueArray);
+})
+.then((successMessage) => {
+  console.log(successMessage);
+});
+
+// Usando Promise.all ()
+
+// Promise.all()acepta una serie de promesas como argumento y devuelve una sola promesa.
+
+let myPromises = Promise.all([returnsPromOne(), returnsPromTwo(), returnsPromThree()]);
+
+myPromises
+.then((arrayOfValues) => {
+  console.log(arrayOfValues);
+})
+.catch((rejectionReason) => {
+  console.log(rejectionReason);
+});
+
+
+// example
+
+const {checkAvailability} = require('./library.js');
+
+const onFulfill = (itemsArray) => {
+  console.log(`Items checked: ${itemsArray}`);
+  console.log(`Every item was available from the distributor. Placing order now.`);
+};
+
+const onReject = (rejectionReason) => {
+	console.log(rejectionReason);
+};
+
+const checkSunglasses = checkAvailability('sunglasses', 'Favorite Supply Co.');
+const checkPants = checkAvailability('pants', 'Favorite Supply Co.');
+const  checkBags = checkAvailability('bags', 'Favorite Supply Co.');
+
+Promise.all([checkSunglasses, checkPants, checkBags])
+  .then(onFulfill)
+  .catch(onReject);
