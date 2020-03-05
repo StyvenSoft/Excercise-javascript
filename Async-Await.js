@@ -89,3 +89,71 @@ withAsync(100)
   .then((resolveValue) => {
   console.log(` withAsync(100) returned a promise which resolved to: ${resolveValue}.`);
 })
+
+// El operador "Await"
+// La palabra clave "await" solo se puede usar dentro de una async función
+
+// First example
+async function asyncFuncExample(){
+  let resolvedValue = await myPromise();
+  console.log(resolvedValue);
+}
+
+asyncFuncExample(); // Prints: I am resolved now!
+
+// Second example
+
+const brainstormDinner = require('./library.js')
+
+
+// Native promise version:
+function nativePromiseDinner() {
+  brainstormDinner().then((meal) => {
+	  console.log(`I'm going to make ${meal} for dinner.`);
+  })
+}
+
+
+// async/await version:
+async function announceDinner() {
+  let meal = await brainstormDinner();
+  console.log(`I'm going to make ${meal} for dinner.`);
+}
+announceDinner();
+
+// Escribiendo funciones asíncronas
+
+let myPromise = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Yay, I resolved!')
+    }, 1000);
+  });
+}
+
+// Ahora escribiremos dos asyncfunciones que invocan myPromise()
+
+async function noAwait() {
+ let value = myPromise();
+ console.log(value);
+}
+
+async function yesAwait() {
+ let value = await myPromise();
+ console.log(value);
+}
+
+noAwait(); // Prints: Promise { <pending> }
+yesAwait(); // Prints: Yay, I resolved!
+
+// Second Example async await
+
+const shopForBeans = require('./library.js');
+
+async function getBeans() {
+  console.log(`1. Heading to the store to buy beans...`);
+  let value = await shopForBeans();
+  console.log(`3. Great! I'm making ${value} beans for dinner tonight!`);
+}
+
+getBeans();
