@@ -222,7 +222,7 @@ rejectedPromise.catch((rejectValue) => {
 console.log(rejectValue);
 })
 
-// Example 
+// Example
 
 const cookBeanSouffle = require('./library.js');
 
@@ -237,3 +237,64 @@ console.log('Ordering a pizza!');
 }
 
 hostDinnerParty();
+
+// Manejo de promesas independientes
+
+// await detiene la ejecución de nuestra async función
+
+//  ¿qué pasa si nuestra asyncfunción contiene múltiples promesas que no dependen de los resultados de la ejecución?
+
+async function waiting() {
+ const firstValue = await firstAsyncThing();
+ const secondValue = await secondAsyncThing();
+ console.log(firstValue, secondValue);
+}
+
+async function concurrent() {
+ const firstPromise = firstAsyncThing();
+ const secondPromise = secondAsyncThing();
+console.log(await firstPromise, await secondPromise);
+}
+
+// Example
+
+let {cookBeans, steamBroccoli, cookRice, bakeChicken} = require('./library.js')
+
+async function serveDinner(){
+ const vegetablePromise = steamBroccoli();
+ const starchPromise = cookRice();
+ const proteinPromise = bakeChicken();
+ const sidePromise = cookBeans();
+  console.log(`Dinner is served. We're having ${await vegetablePromise}, ${await starchPromise}, ${await proteinPromise}, and ${await sidePromise}.`);
+}
+
+serveDinner();
+
+// Await Promise.all()
+
+// Podemos pasar una serie de promesas como argumento para Promise.all()
+
+async function asyncPromAll() {
+  const resultArray = await Promise.all([asyncTask1(), asyncTask2(), asyncTask3(), asyncTask4()]);
+  for (let i = 0; i<resultArray.length; i++){
+    console.log(resultArray[i]);
+  }
+}
+
+// cada una de las cuatro tareas asincrónicas puede procesarse simultáneamente. Promise.all()
+
+// Complete example
+let {cookBeans, steamBroccoli, cookRice, bakeChicken} = require('./library.js');
+
+async function serveDinnerAgain(){
+  const foodArray = await Promise.all([steamBroccoli(), cookRice(), bakeChicken(), cookBeans()]);
+
+  let vegetable = foodArray[0];
+  let starch =  foodArray[1];
+  let protein =  foodArray[2];
+  let side =  foodArray[3];
+
+  console.log(`Dinner is served. We're having ${vegetable}, ${starch}, ${protein}, and ${side}.`);
+}
+
+serveDinnerAgain();
