@@ -15,6 +15,26 @@ const _={
         }
   let isInRange = start <= number && number < end 
       return isInRange
+    },
+    words(string) {
+      const words = string.split(' ');
+      return words;
+    },
+    pad(string, length) {
+      if(string.length >= length) {
+        return string;
+      }
+      const startPaddingLength = Math.floor((length - string.length) / 2);
+      const endPaddingLength = length - string.length - startPaddingLength;
+      const paddedString = ' '.repeat(startPaddingLength) + string + ' '.repeat(endPaddingLength);
+      return paddedString;
+    },
+    has(object, key) {
+      const hasValue = object[key];
+      if(hasValue != undefined){
+         return true;
+      }
+        return false;
     }
 };
   
