@@ -35,6 +35,20 @@ const _={
          return true;
       }
         return false;
+    },
+    drop(array, n){
+      if(n === undefined){
+        n = 1;
+      }
+      /* slice() devuelve una copia de una parte del array dentro de un nuevo array empezando por inicio hasta fin (fin no incluido). El array original no se modificará. */
+      let droppedArray = array.slice(n, array.length);
+      return droppedArray;
+    },
+    dropWhile(array, predicate){
+        const cb = (element, index) => {
+          return !predicate(element, index, array);
+        };
+      let dropNumber = array.findIndex(cb)
     }
 };
   
