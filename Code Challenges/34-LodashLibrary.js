@@ -48,7 +48,20 @@ const _={
         const cb = (element, index) => {
           return !predicate(element, index, array);
         };
+      /*
+    findIndex() devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada. En caso contrario devuelve -1
+    */
       let dropNumber = array.findIndex(cb)
+      let droppedArray = this.drop(array, dropNumber);
+      return droppedArray;
+    },
+    chunk(array, size=1) {
+      let arrayChunks = [];
+      for(let i = 0; i < array.length; i += size){
+        let arrayChunk = array.slice(i, i+size);
+        arrayChunks.push(arrayChunk);
+      }
+      return arrayChunks;
     }
 };
   

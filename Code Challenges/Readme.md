@@ -8,3 +8,11 @@ El **objeto Array** de JavaScript es un objeto global que es usado en la constru
 Descripción
 
 https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array
+
+## Lodash
+
+34.Lodash Library
+
+Una moderna biblioteca de utilidades de JavaScript que ofrece modularidad, rendimiento y extras.
+
+https://lodash.com/
