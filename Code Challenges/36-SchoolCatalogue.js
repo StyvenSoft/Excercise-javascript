@@ -21,7 +21,17 @@ class School {
           }
     }
     quickFacts() {
-        console.log(`${name} educates ${newNumberOfStudets} students at the ${level} school level.`);
+        console.log(`${this.name} educates ${this.newNumberOfStudets} students at the ${this.level} school level.`);
+    }
+    static pickSubstituteTeacher (substituteTeacher) {
+        const rantInt = Math.floor(Math.random() * substituteTeacher.length);
+        return substituteTeacher[rantInt];
+    }
+}
+class PrimarySchool extends School {
+    constructor (name, numberOfStudents, pickupPolicy) {
+        super(name, 'primary', numberOfStudents);
+        this._pickupPolicy = pickupPolicy;
     }
 }
 
