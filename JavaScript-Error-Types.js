@@ -142,3 +142,68 @@ function getLaterFirstLetter(string1, string2) {
   
   // Should return null
   console.log("getLaterFirstLetter('astro', 'afar') returns: " + getLaterFirstLetter('astro', 'afar'));
+
+
+
+
+  // Finding Documentation
+
+  /*
+  Los documentos web MDN JavaScript son un recurso poderoso, pero pueden ser 
+  abrumadores porque cubren mucha información
+  */
+
+  // función que se supone que toma una cadena y devuelve una versión de esa cadena repetida dos veces. 
+
+// Link to String.repeat() documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+function doubleString(string) {
+    return string.repeat(2);
+  }
+  
+  // Should return 'echoecho'
+  console.log("doubleString('echo') returns: " + doubleString('echo'));
+
+
+
+/** Toma una cadena y comprueba si esa cadena contiene la subcadena 'cake'dentro de ella. 
+ * Si es así, debería volver true. Si no, debería volver false. */
+
+
+// Returns whether or not the provided string contains a substring of "cake" in it.
+const containsCake = string => string.includes('cake');
+
+// Should return true
+console.log("containsCake('I think cake is my soul mate.') returns: " + containsCake('I think cake is my soul mate.'));
+
+// Should return false
+console.log("containsCake('Pie is certainly the coolest dessert.') returns: " + containsCake('Pie is certainly the coolest dessert.'));
+
+// Example 
+/**
+ * El primero verifica si la cadena 'Dog'está en el rango de longitud de 2y 4. En este caso, la función 
+ * debería regresar trueporque la longitud de la cadena es la 3que está entre esos dos valores.
+ *  Los siguientes dos ejemplos fallan. El primero falla porque la cadena es demasiado larga. 
+ * El segundo falla porque la cadena es demasiado corta.
+ * 
+*/
+
+function isStringPerfectLength(string, minLength, maxLength) {
+    const stringLength = string.length;
+    
+    if (stringLength < minLength) {
+      return false;
+    } else if (stringLength > maxLength) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  
+  // Should return true
+  console.log("isStringPerfectLength('Dog', 2, 4) returns: " + isStringPerfectLength('Dog', 2, 4));
+  
+  // Should return false
+  console.log("isStringPerfectLength('Mouse', 2, 4) returns: " + isStringPerfectLength('Mouse', 2, 4));
+  
+  // Should return false
+  console.log("isStringPerfectLength('Cat', 4, 9) returns: " + isStringPerfectLength('Cat', 4, 9));
