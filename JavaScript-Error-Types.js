@@ -207,3 +207,105 @@ function isStringPerfectLength(string, minLength, maxLength) {
   
   // Should return false
   console.log("isStringPerfectLength('Cat', 4, 9) returns: " + isStringPerfectLength('Cat', 4, 9));
+
+
+// Runtime Errors
+
+// Cuando ejecutamos código y una línea de código arroja un error, ese error se denomina error de tiempo de ejecución 
+
+// tenemos una función throwError()que arrojará a ReferenceError. 
+
+console.log('This message will be printed to the console.');
+
+function throwError () {
+  return notDefinedVar;
+}
+
+// Call throwError() below:
+throwError();
+
+console.log('Because of the error, this will not printed!');
+
+// Constructing an Error
+
+/**
+ * Usar la Errorfunción para crear nuestro propio objeto de 
+ * error con un mensaje que sea exclusivo de nuestro programa!
+ */
+
+console.log(Error('Your password is too weak.'));
+// Prints: Error: Your password is too weak.
+
+console.log(new Error('Your password is too weak.'));
+// Prints: Error: Your password is too weak.
+
+
+// Other example
+
+// Write your code below:
+console.log(Error('User missing name'));
+console.log('Will logging the error stop our program from running?');
+
+
+// The throw Keyword
+
+/**
+ * Crear un error no hace que nuestro programa se detenga; recuerde, se debe lanzar 
+ * un error para detener el programa.
+ */
+
+// Para arrojar un error en JavaScript, usamos la throwpalabra clave así:
+
+throw new Error('Something wrong happened');
+// Error: Something wrong happened
+
+throw Error('Username or password do not match');
+// Error: Something wrong happened
+
+console.log('This will never run');
+
+
+// The try...catch Statement
+
+/**
+ * los errores arrojados han causado que nuestro programa deje de ejecutarse. 
+ * Pero, tenemos la capacidad de anticipar y manejar estos errores al escribir código 
+ * para abordar el error y permitir que nuestro programa continúe ejecutándose.
+ */
+
+ // try...catchdeclaraciones para anticipar y manejar errores.
+
+ try {
+  throw Error('This error will get caught');
+} catch (e) {
+  console.log(e);
+}
+// Prints: This error will get caught
+
+console.log('The thrown error that was caught in the try...catch statement!');
+// Prints: 'The thrown error that was caught in the try...catch statement!'
+
+
+// Handling with try...catch
+
+const someVar = 'Cannot be reassigned';
+try {
+  someVar = 'Still going to try';
+} catch(e) {
+  console.log(e);
+}
+// Prints: TypeError: Assignment to constant variable.
+
+// Example
+
+function capAllElements(arr){
+	try{
+    arr.forEach((el, index, array) => {
+    array[index] = el.toUpperCase();
+    });
+  } catch(e) {
+    console.log(e)
+  }
+}
+
+capAllElements('Incorrect argument');
